@@ -22,4 +22,7 @@ public:
 private:
 	ATank* GetControlledTank() const;
 	ATank* GetPlayerController() const;
+
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 };
