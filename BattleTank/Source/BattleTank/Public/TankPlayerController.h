@@ -15,6 +15,15 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 
 public:
+	
+
+private:
+	UPROPERTY(EditAnywhere)
+	float CrossHairXLocation = 0.5;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairYLocation = 0.33333;
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -22,7 +31,7 @@ public:
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
 	// aims the barrel to the crosshair
 	void AimTowardsCrosshair();
 
