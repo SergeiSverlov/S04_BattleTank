@@ -36,7 +36,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	// if no solution found do nothing
 }
 
-void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
+void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	Barrel = BarrelToSet;
 }
@@ -47,8 +47,6 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
-	// Move the barrel the right amount this frame 
-
-	// Given the max elevation speed and frame time
-
+	
+	Barrel->Elevate(5); // TODO get rid of magic number
 }

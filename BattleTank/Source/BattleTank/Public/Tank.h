@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "TankBarrel.h"
 #include "TankAimingComponent.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
@@ -16,7 +17,7 @@ public:
 	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
-	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
